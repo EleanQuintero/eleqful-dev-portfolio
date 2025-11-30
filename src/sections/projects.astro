@@ -14,7 +14,7 @@ import { Badge } from "@/components/ui/badge";
 ---
 
 <section
-  id="hero"
+  id="projects"
   class="flex flex-col min-h-screen items-center justify-center bg-linear-to-br from-[#FFFF] via-[#d1d2d4] to-[#c5c9ca] overflow-hidden"
 >
   <div class="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -67,6 +67,7 @@ import { Badge } from "@/components/ui/badge";
                   target="_blank"
                   href={project.demoUrl}
                   class="flex items-center"
+                  rel="noopener noreferrer"
                 >
                   <ExternalLink className="w-4 h-4 mr-1" />
                   <span>Demo</span>
@@ -77,6 +78,7 @@ import { Badge } from "@/components/ui/badge";
                   target="_blank"
                   href={project.githubUrl}
                   class="flex items-center"
+                  rel="noopener noreferrer"
                 >
                   <Github className="w-4 h-4 mr-1" />
                   <span>Código</span>
