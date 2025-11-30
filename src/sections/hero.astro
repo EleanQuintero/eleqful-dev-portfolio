@@ -1,0 +1,45 @@
+---
+import Cta from "@/components/CTA.astro";
+import { Button } from "@/components/ui/button";
+---
+
+<section
+  id="hero"
+  class="flex flex-col min-h-screen items-center justify-center bg-linear-to-br from-[#1E2952] via-[#1B4B7F] to-[#0F6E8F] overflow-hidden"
+>
+  <div class="flex flex-row justify-center items-center">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="max-w-4xl mx-auto text-center space-y-8">
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
+          Elean Quintero | Software Engineer
+        </h1>
+
+        <p class="text-xl sm:text-2xl text-[#A8BDD0] max-w-3xl mx-auto">
+          Ingeniero de software especializado en desarrollo web full-stack.
+          Transformo requisitos complejos en productos escalables y fáciles de
+          usar.
+        </p>
+
+        <div
+          class="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4"
+        >
+          <Cta text="Contactame" href="#contact" />
+          <Button
+            size="lg"
+            variant="outline"
+            className="bg-transparent text-white border-white hover:bg-white/10"
+          >
+            Ver Proyectos
+          </Button>
+        </div>
+      </div>
+    </div>
+    <div>
+      <img
+        src="https://res.cloudinary.com/dygwnv56x/image/upload/v1764464835/20251109_1454_Elegant_Tech_Logo_remix_01k9me9mn0e5ytht6zs1djty4h_ugaaqm.png"
+        alt=""
+        class="h-4/6 w-4/6 rounded-xl"
+      />
+    </div>
+  </div>
+</section>
