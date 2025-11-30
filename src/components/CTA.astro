@@ -10,7 +10,7 @@ interface Props {
 const { href = "#", text = "Contáctame" }: Props = Astro.props;
 ---
 
-<Button size="lg" className="group">
+<Button size="xl" className="group">
   <a href={href}>{text}</a>
   <Rocket
     className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform"

@@ -1,0 +1,20 @@
+{
+  "projects": [
+    {
+      "title": "MemoryNinja",
+      "description": "Plataforma que genera tarjetas de estudio usando inteligencia artificial con autenticacion, base de datos y dashboard.",
+      "image": "https://res.cloudinary.com/dygwnv56x/image/upload/v1764516780/memoryninja_m2opxv.webp",
+      "technologies": [
+        "Next.js",
+        "Node.js",
+        "React",
+        "Express.js",
+        "MySQL",
+        "Tailwind CSS",
+        "Gemini AI API"
+      ],
+      "demoUrl": "https://memoryninja.es",
+      "githubUrl": "https://github.com/EleanQuintero/Memory-Ninja"
+    }
+  ]
+}

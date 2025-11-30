@@ -1,0 +1,122 @@
+---
+import { Code, Database, Globe, Palette } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
+import { getCollection, render } from "astro:content";
+
+export const prerender = true;
+
+const aboutCollection = await getCollection("about");
+const about = aboutCollection[0];
+
+const { data } = about;
+const { title, design, interests, skills, subtitle, tools } = data;
+
+const { Content } = await render(about);
+---
+
+<section
+  id="hero"
+  class="flex flex-col min-h-screen items-center justify-center bg-linear-to-br from-[#FFFF] via-[#d1d2d4] to-[#c5c9ca] overflow-hidden"
+>
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl sm:text-5xl font-bold text-[#1E2952] mb-4">
+        Sobre Mí
+      </h2>
+      <p class="text-xl text-muted-foreground max-w-2xl mx-auto">
+        {title}
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+      <Card>
+        <CardHeader>
+          <CardTitle className="text-[#1E2952] flex items-center gap-2">
+            <Code className="w-5 h-5 text-[#0F6E8F]" />
+            {subtitle}
+          </CardTitle>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          <Content />
+          <Separator />
+          <div class="space-y-2">
+            <h4 class="font-semibold text-[#1E2952]">Intereses</h4>
+            <div class="flex flex-wrap gap-2">
+              {
+                interests.map((interest, index) => (
+                  <Badge key={index} variant="outline">
+                    {interest}
+                  </Badge>
+                ))
+              }
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      <div class="space-y-6">
+        <Card>
+          <CardHeader>
+            <CardTitle className="text-[#1E2952] flex items-center gap-2">
+              <Globe className="w-5 h-5 text-[#0F6E8F]" />
+              Frontend
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div class="flex flex-wrap gap-2">
+              {
+                skills.frontend.map((skill, index) => (
+                  <Badge key={index} variant="default">
+                    {skill}
+                  </Badge>
+                ))
+              }
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardHeader>
+            <CardTitle className="text-[#1E2952] flex items-center gap-2">
+              <Database className="w-5 h-5 text-[#0F6E8F]" />
+              Backend
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div class="flex flex-wrap gap-2">
+              {
+                skills.backend.map((skill, index) => (
+                  <Badge key={index} variant="default">
+                    {skill}
+                  </Badge>
+                ))
+              }
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardHeader>
+            <CardTitle className="text-[#1E2952] flex items-center gap-2">
+              <Palette className="w-5 h-5 text-[#0F6E8F]" />
+              Herramientas & Diseño
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div class="flex flex-wrap gap-2">
+              {
+                [...tools, ...design].map((skill, index) => (
+                  <Badge key={index} variant="default">
+                    {skill}
+                  </Badge>
+                ))
+              }
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+    </div>
+  </div>
+</section>

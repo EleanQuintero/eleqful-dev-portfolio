@@ -3,10 +3,16 @@ import Hero from "@/sections/hero.astro";
 import Layout from "../layouts/Layout.astro";
 import Header from "@/sections/header.astro";
 import Footer from "@/sections/footer.astro";
+import Projects from "@/sections/projects.astro";
+import About from "@/sections/about.astro";
 ---
 
 <Layout>
   <Header />
-  <Hero />
+  <main>
+    <Hero />
+    <Projects />
+    <About />
+  </main>
   <Footer />
 </Layout>

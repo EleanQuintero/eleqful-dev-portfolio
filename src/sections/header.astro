@@ -1,5 +1,63 @@
 ---
-
+import { Button } from "@/components/ui/button";
 ---
 
-<header class="flex flex-row bg-sidebar-primary h-16 text-white">header</header>
+<header
+  class="flex flex-row bg-sidebar-primary h-16 text-white sticky top-0 z-50"
+>
+  <nav
+    class="w-full bg-[#1E2952]/50 backdrop-blur-lg border-b border-[#1B4B7F]/20 shadow-lg"
+  >
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex h-16 items-center justify-between">
+        <div class="">
+          <a class="flex items-center gap-3" href="/">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-code h-6 w-6"
+              ><polyline points="16 18 22 12 16 6"></polyline><polyline
+                points="8 6 2 12 8 18"></polyline></svg
+            >
+            <span class="text-xl font-bold text-white">
+              Elean Quintero
+            </span></a
+          >
+        </div>
+        <div class="hidden md:flex items-center space-x-1">
+          <Button
+            variant="ghost"
+            className="text-white hover:text-[#48A3B5] hover:bg-[#1B4B7F]"
+          >
+            Inicio
+          </Button>
+          <Button
+            variant="ghost"
+            className="text-white hover:text-[#48A3B5] hover:bg-[#1B4B7F]"
+          >
+            Proyectos
+          </Button>
+          <Button
+            variant="ghost"
+            className="text-white hover:text-[#48A3B5] hover:bg-[#1B4B7F]"
+          >
+            Sobre Mí
+          </Button>
+          <Button
+            variant="ghost"
+            className="text-white hover:text-[#48A3B5] hover:bg-[#1B4B7F]"
+          >
+            Contacto
+          </Button>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
