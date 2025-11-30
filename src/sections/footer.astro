@@ -1,5 +1,113 @@
 ---
-
+import { Separator } from "@/components/ui/separator";
+import { Github, Linkedin, Instagram, Heart } from "lucide-react";
 ---
 
-<footer>footer</footer>
+<footer class="bg-[#1E2952] text-white py-12">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid md:grid-cols-3 gap-8 mb-8">
+      <div>
+        <h3 class="text-xl font-bold mb-4 flex items-center gap-3">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-code h-6 w-6"
+            ><polyline points="16 18 22 12 16 6"></polyline><polyline
+              points="8 6 2 12 8 18"></polyline></svg
+          >
+          <span class="text-xl font-bold text-white"> Elean Quintero </span>
+        </h3>
+        <p class="text-[#A8BDD0]">
+          Desarrollador full stack especializado en crear experiencias web
+          excepcionales.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="text-xl font-bold mb-4">Enlaces Rápidos</h3>
+        <ul class="space-y-2">
+          <li>
+            <a
+              href="#hero"
+              class="text-[#A8BDD0] hover:text-[#48A3B5] transition-colors"
+            >
+              Inicio
+            </a>
+          </li>
+          <li>
+            <a
+              href="#projects"
+              class="text-[#A8BDD0] hover:text-[#48A3B5] transition-colors"
+            >
+              Proyectos
+            </a>
+          </li>
+          <li>
+            <a
+              href="#about"
+              class="text-[#A8BDD0] hover:text-[#48A3B5] transition-colors"
+            >
+              Sobre Mí
+            </a>
+          </li>
+          <li>
+            <a
+              href="#contact"
+              class="text-[#A8BDD0] hover:text-[#48A3B5] transition-colors"
+            >
+              Contacto
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-xl font-bold mb-4">Sígueme</h3>
+        <div class="flex gap-4">
+          <a
+            href="https://github.com/EleanQuintero"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="w-10 h-10 rounded-full bg-[#1B4B7F] flex items-center justify-center hover:bg-[#0F6E8F] transition-colors"
+          >
+            <Github className="w-5 h-5" />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/eleanquintero/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="w-10 h-10 rounded-full bg-[#1B4B7F] flex items-center justify-center hover:bg-[#0F6E8F] transition-colors"
+          >
+            <Linkedin className="w-5 h-5" />
+          </a>
+          <a
+            href="https://www.instagram.com/eleqful.dev/"
+            class="w-10 h-10 rounded-full bg-[#1B4B7F] flex items-center justify-center hover:bg-[#0F6E8F] transition-colors"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Instagram className="w-5 h-5" />
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <Separator className="bg-[#1B4B7F] mb-8" />
+
+    <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+      <p class="text-[#A8BDD0] text-sm">
+        © {new Date().getFullYear()} Elean Quintero. Todos los derechos reservados.
+      </p>
+      <p class="text-[#A8BDD0] text-sm flex items-center gap-1">
+        Hecho con <Heart className="w-4 h-4 text-red-400 fill-red-400" /> por Eleqful-Dev
+      </p>
+    </div>
+  </div>
+</footer>
