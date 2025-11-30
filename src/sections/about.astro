@@ -17,10 +17,10 @@ const { Content } = await render(about);
 ---
 
 <section
-  id="hero"
+  id="about"
   class="flex flex-col min-h-screen items-center justify-center bg-linear-to-br from-[#FFFF] via-[#d1d2d4] to-[#c5c9ca] overflow-hidden"
 >
-  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 mt-10 mb-10">
     <div class="text-center mb-16">
       <h2 class="text-4xl sm:text-5xl font-bold text-[#1E2952] mb-4">
         Sobre Mí
@@ -32,10 +32,29 @@ const { Content } = await render(about);
 
     <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
       <Card>
+        <CardContent className="flex items-center justify-center">
+          <img
+            src="https://res.cloudinary.com/dygwnv56x/image/upload/v1764546145/Eleqful2_uvm6ft.webp"
+            alt=""
+            class="w-96 h-96 object-cover rounded-xl aspect-auto"
+          />
+        </CardContent>
+      </Card>
+      <Card>
+        <CardContent className="flex items-center justify-center">
+          <img
+            src="https://res.cloudinary.com/dygwnv56x/image/upload/v1764464835/20251109_1454_Elegant_Tech_Logo_remix_01k9me9mn0e5ytht6zs1djty4h_ugaaqm.png"
+            alt=""
+            class="w-96 h-96 object-cover rounded-xl aspect-auto"
+          />
+        </CardContent>
+      </Card>
+
+      <Card>
         <CardHeader>
           <CardTitle className="text-[#1E2952] flex items-center gap-2">
             <Code className="w-5 h-5 text-[#0F6E8F]" />
-            {subtitle}
+            <span class="text-2xl">{subtitle}</span>
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
@@ -61,7 +80,7 @@ const { Content } = await render(about);
           <CardHeader>
             <CardTitle className="text-[#1E2952] flex items-center gap-2">
               <Globe className="w-5 h-5 text-[#0F6E8F]" />
-              Frontend
+              <span class="text-2xl">Frontend</span>
             </CardTitle>
           </CardHeader>
           <CardContent>
@@ -81,7 +100,7 @@ const { Content } = await render(about);
           <CardHeader>
             <CardTitle className="text-[#1E2952] flex items-center gap-2">
               <Database className="w-5 h-5 text-[#0F6E8F]" />
-              Backend
+              <span class="text-2xl">Backend</span>
             </CardTitle>
           </CardHeader>
           <CardContent>
@@ -101,7 +120,7 @@ const { Content } = await render(about);
           <CardHeader>
             <CardTitle className="text-[#1E2952] flex items-center gap-2">
               <Palette className="w-5 h-5 text-[#0F6E8F]" />
-              Herramientas & Diseño
+              <span class="text-2xl">Herramientas y Diseño</span>
             </CardTitle>
           </CardHeader>
           <CardContent>

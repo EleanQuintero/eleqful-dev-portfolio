@@ -1,21 +1,15 @@
 ---
 title: "Desarrollador apasionado por crear soluciones web innovadoras"
 subtitle: "Mi historia"
-interests: ["Desarrollo FullStack","Arquitectura", "Patrones de diseño", "Clean Code", "Web Performance"]
+interests: ["Desarrollo FullStack","Arquitectura de Software", "Patrones de diseño", "Clean Code", "Web Performance"]
 profileImage: "https://res.cloudinary.com/dygwnv56x/image/upload/v1764515416/Eleqful_olxchs.webp"
 skills:
-  frontend: ['React', 'TypeScript', 'Next.js', 'Tailwind CSS', 'Redux', 'Vue.js']
-  backend: ['Node.js', 'Express', 'PostgreSQL', 'MongoDB', 'GraphQL', 'REST APIs']
-tools: ['Git', 'Docker', 'AWS', 'Jest', 'Webpack', 'CI/CD']
+  frontend: ['TypeScript', 'Next.js', 'React', 'Astro', 'Tailwind CSS', 'React Query', 'Zustand']
+  backend: ['Node.js', 'Express.js', 'MySQL', 'JSON Web Token', 'REST APIs', 'Auth']
+tools: ['Git','GitHub', 'Docker', 'Jest', 'Webpack', 'CI/CD']
 design: ['Figma', 'Responsive Design', 'UI/UX', 'Accessibility']
 ---
 
-Soy un desarrollador full stack con más de 5 años de experiencia
-creando aplicaciones web modernas y escalables. Mi pasión por la
-tecnología comenzó cuando descubrí el poder de transformar ideas en
-productos digitales funcionales.
+Soy un desarrollador full stack apasionado por crear aplicaciones web modernas y escalables. Mi conexión con la tecnología nació desde pequeño, cuando descubrí que podía transformar ideas en productos digitales reales—en ese momento supe que el desarrollo de software sería mi camino.
 
-Me especializo en el ecosistema de JavaScript/TypeScript, con un
-enfoque particular en React y Node.js. Disfruto trabajando en
-proyectos que desafían mis habilidades y me permiten aprender nuevas
-tecnologías.
+Me especializo en el ecosistema JavaScript/TypeScript, con dominio profundo en React y Node.js. Lo que realmente me motiva son los proyectos desafiantes: esos que me empujan a dominar nuevas tecnologías mientras ayudo a empresas y emprendedores a alcanzar sus objetivos a través de soluciones de software bien ejecutadas.
