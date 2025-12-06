@@ -1,9 +1,31 @@
 ---
-
+import ContactForm from "@/components/contactForm/ContactForm";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 ---
 
 <section
   id="contact"
   class="flex flex-col min-h-screen items-center justify-center bg-linear-to-br from-[#ffffff] via-[#d1d4d6] to-[#c8cdce] overflow-hidden px-4 sm:px-6 lg:px-8"
 >
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl sm:text-5xl font-bold text-[#1E2952] mb-4">
+        Hablemos de tu Proyecto
+      </h2>
+      <p class="text-xl text-muted-foreground max-w-2xl mx-auto">
+        Estoy disponible para nuevos proyectos. Cuéntame sobre tu idea y veamos
+        cómo puedo ayudarte a hacerla realidad.
+      </p>
+    </div>
+    <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+      <Card>
+        <CardHeader>
+          <CardTitle className="text-[#1E2952]"> Envíame un Mensaje </CardTitle>
+        </CardHeader>
+        <CardContent>
+          <ContactForm client:load />
+        </CardContent>
+      </Card>
+    </div>
+  </div>
 </section>
