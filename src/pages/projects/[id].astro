@@ -1,0 +1,50 @@
+---
+import { Badge } from "@/components/ui/badge";
+import { Card, CardContent } from "@/components/ui/card";
+import ProjectsLayout from "@/layouts/ProjectsLayout.astro";
+import { getCollection, render } from "astro:content";
+
+export const prerender = true;
+export async function getStaticPaths() {
+  const projects = await getCollection("projects");
+  return projects.map((project) => ({
+    params: { id: project.data.title.toLowerCase().replace(/\s+/g, "-") },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props;
+
+const { title, description, imageURL, technologies, demoURL, githubURL } =
+  project.data;
+
+const { Content } = await render(project);
+---
+
+<ProjectsLayout title={title}>
+  <main class="max-w-3xl mx-auto px-4 py-16">
+    <h1 class="text-5xl font-bold mb-4">{title}</h1>
+    <section class="flex flex-col justify-center items-center">
+      <p class="text-lg mb-6">{description}</p>
+      <div class="flex flex-wrap gap-2 mb-8">
+        {
+          technologies.map((tech, techIndex) => (
+            <Badge key={techIndex} variant="secondary">
+              {tech}
+            </Badge>
+          ))
+        }
+      </div>
+      <div class="">
+        <img src={imageURL} alt="" />
+      </div>
+      <article class="prose prose-amber mx-auto p-3">
+        <Card className="p-6 mt-8 bg-white/40  ">
+          <CardContent>
+            <Content />
+          </CardContent>
+        </Card>
+      </article>
+    </section>
+  </main>
+</ProjectsLayout>
