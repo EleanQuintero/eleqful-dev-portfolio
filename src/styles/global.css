@@ -119,3 +119,16 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Estilos personalizados para enlaces en contenido markdown */
+.prose a {
+  color: #000000; /* Azul - puedes cambiarlo al color que prefieras */
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.prose a:hover {
+  color: #0748d6; /* Azul más oscuro al hacer hover */
+  text-decoration: underline;
+}

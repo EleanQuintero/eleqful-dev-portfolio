@@ -2,6 +2,7 @@
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import ProjectsLayout from "@/layouts/ProjectsLayout.astro";
+import Link from "@/components/Link.astro";
 import { getCollection, render } from "astro:content";
 
 export const prerender = true;
@@ -15,16 +16,18 @@ export async function getStaticPaths() {
 
 const { project } = Astro.props;
 
-const { title, description, imageURL, technologies, demoURL, githubURL } =
+const { title, description, imageURL, technologies, projectImages } =
   project.data;
 
 const { Content } = await render(project);
 ---
 
 <ProjectsLayout title={title}>
-  <main class="max-w-3xl mx-auto px-4 py-16">
-    <h1 class="text-5xl font-bold mb-4">{title}</h1>
-    <section class="flex flex-col justify-center items-center">
+  <main class="mx-auto px-4 py-16">
+    <section
+      class="flex flex-col justify-center items-center max-w-3xl mx-auto mb-12"
+    >
+      <h1 class="text-5xl font-bold mb-4">{title}</h1>
       <p class="text-lg mb-6">{description}</p>
       <div class="flex flex-wrap gap-2 mb-8">
         {
@@ -38,13 +41,22 @@ const { Content } = await render(project);
       <div class="">
         <img src={imageURL} alt="" />
       </div>
+    </section>
+    <section class="grid grid-cols-2">
       <article class="prose prose-amber mx-auto p-3">
-        <Card className="p-6 mt-8 bg-white/40  ">
-          <CardContent>
-            <Content />
-          </CardContent>
-        </Card>
+        <Content components={{ a: Link }} />
       </article>
+      <div class="flex flex-col items-center p-3 max-w-2xl">
+        {
+          projectImages?.length ? (
+            projectImages.map((imgSrc) => (
+              <img src={imgSrc} alt="" class="mb-4" />
+            ))
+          ) : (
+            <img src={imageURL} alt="" />
+          )
+        }
+      </div>
     </section>
   </main>
 </ProjectsLayout>
