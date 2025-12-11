@@ -19,11 +19,13 @@ MemoryNinja es una aplicacion web full stack en la cual se trabajan conceptos de
 
 El frontend de Memory Ninja está construido con **React y Next.js**, una combinación que elegí estratégicamente por su capacidad de escalar sin comprometer el rendimiento. Next.js no es solo un framework más—es una plataforma completa que integra funcionalidades esenciales como React Server Components, App Router y API Routes nativas, eliminando la necesidad de configuraciones complejas y permitiéndome enfocarme en construir características de valor.
 
+<img src="https://res.cloudinary.com/dygwnv56x/image/upload/v1765468750/memoryninjaflashcards_whrkpb.webp" alt="" class="mb-4 rounded-2xl" />
+
 ### Gestión Inteligente del Estado
 
 Para manejar las peticiones al servidor implementé **TanStack Query** (antes React Query), una herramienta que transforma completamente cómo las aplicaciones web manejan datos asíncronos. ¿La ventaja? Cacheo automático, revalidación inteligente y sincronización de UI sin esfuerzo manual. En términos prácticos, esto significa que la aplicación responde instantáneamente a las acciones del usuario, reduce llamadas innecesarias al servidor y mantiene los datos siempre actualizados—todo mientras el código permanece limpio y mantenible.
 
-<img src="https://res.cloudinary.com/dygwnv56x/image/upload/v1765285648/tanstack-query-memoryninja_mbkhmj.webp" alt="" class="mb-4" />
+<img src="https://res.cloudinary.com/dygwnv56x/image/upload/v1765466191/tanstack-query-memoryninja_mbkhmj.webp" alt="" class="mb-4 rounded-2xl" />
 
 ### Interfaz y Experiencia Visual
 
@@ -32,6 +34,9 @@ La capa visual combina **Shadcn/ui** y **Framer Motion**:
 - **Shadcn/ui** me proporciona componentes accesibles y customizables de alta calidad que se integran perfectamente sin imponer dependencias pesadas—básicamente obtienes el código fuente directamente en tu proyecto para modificarlo como necesites.
 
 - **Framer Motion** añade animaciones fluidas y naturales que hacen que cada interacción se sienta pulida y profesional, transformando una interfaz funcional en una experiencia memorable.
+
+<img src="https://res.cloudinary.com/dygwnv56x/image/upload/v1765468328/memoryNinjaViews_yt9nsc.webp" alt="" class="mb-4 rounded-2xl" />
+<img src="https://res.cloudinary.com/dygwnv56x/image/upload/v1765468577/memoryninjagenerator_pik28s.webp" alt="" class="mb-4 rounded-2xl" />
 
 Este stack no solo acelera el desarrollo, sino que garantiza una base sólida, escalable y con las mejores prácticas de la industria.
 
@@ -58,7 +63,48 @@ He implementado dos patrones clave que hacen el código más mantenible y profes
 
 2. **Inyección de Dependencias mediante Contenedores**: Utilizo contenedores para gestionar las dependencias del proyecto. En términos prácticos, esto permite intercambiar servicios (como el modelo de IA o la base de datos) de forma limpia, simplemente modificando la configuración del contenedor sin reescribir código.
 
-**¿El resultado?** Un backend flexible, testeable y preparado para evolucionar. Puedo experimentar con diferentes tecnologías sin miedo a romper todo el sistema.
+**¿El resultado?** Un backend flexible, testeable y preparado para evolucionar. Puedo experimentar con diferentes tecnologías sin miedo a romper todo el sistema. 
+
+<img src="https://res.cloudinary.com/dygwnv56x/image/upload/v1765472094/Backend-Arch_qq37ea.webp" alt="" class="mb-4 rounded-2xl" />
+
+### 🤖 Módulo de Inteligencia Artificial
+
+Uno de los aspectos más interesantes del proyecto es cómo he estructurado la integración con IA. En lugar de acoplar el código directamente a Google Gemini, implementé una **capa de abstracción** que demuestra comprensión de principios SOLID:
+
+#### Abstracción mediante Interfaces
+
+Creé una interfaz `IAInterface` que define el contrato que cualquier modelo de IA debe cumplir:
+```typescript
+interface IAInterface {
+    generateAnswer(tema: string, pregunta: string[]): Promise
+    generateMultipleAnswer(tema: string, preguntas: string[]): Promise
+}
+```
+
+**¿Por qué es importante esto?** Significa que puedo cambiar de Google Gemini a OpenAI, Claude, o cualquier otro proveedor simplemente creando una nueva clase que implemente esta interfaz. El resto del sistema no se entera del cambio.
+
+#### Implementación con Google Gemini
+
+Actualmente uso **Google Gemini** con dos modelos configurables:
+- **Kōga (甲賀)**: Modelo estándar para generación de respuestas
+- **Kurayami (暗闇)**: Modelo alternativo como fallback
+
+La implementación incluye:
+
+✅ **Streaming progresivo**: Agregación de chunks para mejorar la experiencia del usuario  
+✅ **Prompts dinámicos**: Sistema de templates que inyecta variables como `{{tema}}` y `{{pregunta}}`  
+✅ **Manejo robusto de errores**: Retry logic y logging detallado para debugging  
+✅ **Parsing inteligente**: Expresiones regulares para extraer respuestas numeradas del output de la IA
+
+#### Sistema de Prompts Configurables
+
+Los prompts no están hardcodeados—viven en variables de entorno:
+```
+AI_ANSWERS_PROMPT="Genera una respuesta concisa sobre {{tema}}: {{pregunta}}"
+AI_MANY_ANSWERS_PROMPT="Responde las siguientes preguntas sobre {{tema}}..."
+```
+
+Esto me permite iterar sobre la calidad de las respuestas sin tocar código, solo ajustando la configuración.
 
 <a href="https://github.com/EleanQuintero/Memory-Ninja-backend" target="_blank" rel="noopener noreferrer"><strong>Puedes ver el codigo del Backend aqui</strong></a>
 
