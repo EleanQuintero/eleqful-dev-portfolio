@@ -1,4 +1,6 @@
 ---
+import Footer from "@/sections/footer.astro";
+import Header from "@/sections/header.astro";
 import "@/styles/global.css";
 
 interface Props {
@@ -21,7 +23,9 @@ const { title, description }: Props = Astro.props;
   <body
     class="bg-linear-to-br from-[#ffffff] via-[#d0d1d3] to-[#aeb4b6] text-black"
   >
+    <Header />
     <slot />
+    <Footer />
   </body>
 </html>
 

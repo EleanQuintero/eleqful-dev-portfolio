@@ -27,7 +27,7 @@ const { Content } = await render(project);
     <section
       class="flex flex-col justify-center items-center max-w-3xl mx-auto mb-12"
     >
-      <h1 class="text-5xl font-bold mb-4">{title}</h1>
+      <h1 class="text-4xl font-bold mb-4 md:text-5xl">{title}</h1>
       <p class="text-lg mb-6">{description}</p>
       <div class="flex flex-wrap gap-2 mb-8">
         {
@@ -39,24 +39,13 @@ const { Content } = await render(project);
         }
       </div>
       <div class="">
-        <img src={imageURL} alt="" />
+        <img src={imageURL} alt="" class="rounded-2xl" />
       </div>
     </section>
-    <section class="grid grid-cols-2">
+    <section class="flex flex-col gap-8 max-w-3xl mx-auto md:gap-12">
       <article class="prose prose-amber mx-auto p-3">
         <Content components={{ a: Link }} />
       </article>
-      <div class="flex flex-col items-center p-3 max-w-2xl">
-        {
-          projectImages?.length ? (
-            projectImages.map((imgSrc) => (
-              <img src={imgSrc} alt="" class="mb-4" />
-            ))
-          ) : (
-            <img src={imageURL} alt="" />
-          )
-        }
-      </div>
     </section>
   </main>
 </ProjectsLayout>
