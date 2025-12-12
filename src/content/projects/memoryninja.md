@@ -11,9 +11,9 @@ projectImages: ["https://res.cloudinary.com/dygwnv56x/image/upload/v1764516780/m
 
 ## Sobre el proyecto
 
-Cree MemoryNinja con el objetivo de poder estudiar comodamente generando tarjetas de estudio con inteligencia artificial, para memorizar conceptos del grado superior que estudie o incluso para ayudarme en mi camino de aprendizaje en Japones.
+Cree MemoryNinja con el objetivo de poder estudiar cómodamente generando tarjetas de estudio con inteligencia artificial, para memorizar conceptos del grado superior que estudie o incluso para ayudarme en mi camino de aprendizaje en Japones.
 
-MemoryNinja es una aplicacion web full stack en la cual se trabajan conceptos de Frontend, Backend y Base de datos. Ademas, tambien de sistemas de pago, autenticacion de terceros en conjunto de patrones arquitectonicos de software y patrones de diseño.
+MemoryNinja es una aplicación web full stack en la cual se trabajan conceptos de Frontend, Backend y Base de datos. Ademas, también de sistemas de pago, autenticación de terceros en conjunto de patrones arquitectónicos de software y patrones de diseño.
 
 ## Frontend: Arquitectura Moderna para Experiencias Fluidas
 
@@ -40,7 +40,7 @@ La capa visual combina **Shadcn/ui** y **Framer Motion**:
 
 Este stack no solo acelera el desarrollo, sino que garantiza una base sólida, escalable y con las mejores prácticas de la industria.
 
-<a href="https://github.com/EleanQuintero/Memory-Ninja" target="_blank" rel="noopener noreferrer"><strong>Puedes ver el codigo del frontend aqui</strong></a>
+<a href="https://github.com/EleanQuintero/Memory-Ninja" target="_blank" rel="noopener noreferrer"><strong>Puedes ver el código del frontend aquí</strong></a>
 
 ---
 
@@ -106,6 +106,6 @@ AI_MANY_ANSWERS_PROMPT="Responde las siguientes preguntas sobre {{tema}}..."
 
 Esto me permite iterar sobre la calidad de las respuestas sin tocar código, solo ajustando la configuración.
 
-<a href="https://github.com/EleanQuintero/Memory-Ninja-backend" target="_blank" rel="noopener noreferrer"><strong>Puedes ver el codigo del Backend aqui</strong></a>
+<a href="https://github.com/EleanQuintero/Memory-Ninja-backend" target="_blank" rel="noopener noreferrer"><strong>Puedes ver el código del Backend aquí</strong></a>
 
 ---
