@@ -7,6 +7,7 @@ technologies: [ "TypeScript","Next.js","Node.js","React","Express.js",
 demoURL: "https://memoryninja.es"
 githubURL: "https://github.com/EleanQuintero/Memory-Ninja"
 projectImages: ["https://res.cloudinary.com/dygwnv56x/image/upload/v1764516780/memoryninja_m2opxv.webp", "https://res.cloudinary.com/dygwnv56x/image/upload/v1764516780/memoryninja_m2opxv.webp", "https://res.cloudinary.com/dygwnv56x/image/upload/v1764516780/memoryninja_m2opxv.webp", "https://res.cloudinary.com/dygwnv56x/image/upload/v1764516780/memoryninja_m2opxv.webp"]
+demoVideoURL: "https://www.youtube.com/embed/1PFCJDUbvUU?si=ci7snW22CswmFRmS&amp;controls=0" 
 ---
 
 ## Sobre el proyecto
