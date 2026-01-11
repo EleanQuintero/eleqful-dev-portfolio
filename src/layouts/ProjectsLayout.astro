@@ -6,19 +6,63 @@ import "@/styles/global.css";
 interface Props {
   title?: string | undefined;
   description?: string | undefined;
+  image?: string | undefined;
 }
 
-const { title, description }: Props = Astro.props;
+const {
+  title,
+  description = "Explora mis proyectos de desarrollo web full-stack. Aplicaciones construidas con React, Next.js, Node.js y más tecnologías modernas.",
+  image = "https://res.cloudinary.com/dygwnv56x/image/upload/v1764515416/Eleqful_olxchs.webp",
+}: Props = Astro.props;
+
+const pageTitle = title
+  ? `${title} | Elean Quintero`
+  : "Mis Proyectos | Elean Quintero";
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const ogImage = new URL(image, Astro.site);
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="manifest" href="/manifest.json" />
     <meta name="generator" content={Astro.generator} />
-    <title>{`Mis Proyectos | ${title}`}</title>
+
+    <!-- Primary Meta Tags -->
+    <title>{pageTitle}</title>
+    <meta name="title" content={pageTitle} />
+    <meta name="description" content={description} />
+    <meta name="author" content="Elean Quintero" />
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:site_name" content="Elean Quintero - Portfolio" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={canonicalURL} />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:creator" content="@eleqful.dev" />
+
+    <!-- Additional Meta Tags -->
+    <meta name="robots" content="index, follow" />
+
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://res.cloudinary.com" />
+    <link rel="dns-prefetch" href="https://res.cloudinary.com" />
   </head>
   <body
     class="bg-linear-to-br from-[#ffffff] via-[#d0d1d3] to-[#aeb4b6] text-black"
