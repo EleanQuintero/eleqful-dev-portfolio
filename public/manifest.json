@@ -1,0 +1,34 @@
+{
+  "name": "Elean Quintero - Portfolio",
+  "short_name": "Eleqful",
+  "description": "Portfolio profesional de Elean Quintero, Ingeniero de Software Full-Stack especializado en desarrollo web moderno",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1E2952",
+  "theme_color": "#1E2952",
+  "orientation": "portrait-primary",
+  "lang": "es",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["portfolio", "technology", "development"],
+  "shortcuts": [
+    {
+      "name": "Proyectos",
+      "short_name": "Proyectos",
+      "description": "Ver mis proyectos destacados",
+      "url": "/#projects"
+    },
+    {
+      "name": "Contacto",
+      "short_name": "Contacto",
+      "description": "Contactar conmigo",
+      "url": "/#contact"
+    }
+  ]
+}

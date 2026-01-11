@@ -1,0 +1,28 @@
+# robots.txt para https://eleqful.dev
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://eleqful.dev/sitemap-index.xml
+Sitemap: https://eleqful.dev/sitemap-0.xml
+
+# Crawl-delay para respetar los recursos del servidor
+Crawl-delay: 1
+
+# Bloquear acceso a archivos de configuración si existieran
+Disallow: /api/
+Disallow: /*.json$
+
+# Permitir crawlers de redes sociales
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: WhatsApp
+Allow: /
