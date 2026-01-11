@@ -1,0 +1,79 @@
+---
+import { Curriculums } from "@/lib/data/cvs.json";
+import { FileCheckIcon } from "lucide-react";
+
+const cvs = Curriculums.map((item) => ({
+  title: item.title,
+  downloadUrl: item.url.replace("/upload/", "/upload/fl_attachment/"),
+}));
+---
+
+<div class="flex flex-row items-center justify-center gap-6 flex-wrap">
+  {
+    cvs.map((cv) => (
+      <a
+        href={cv.downloadUrl}
+        class="download-button bg-primary hover:bg-primary/90"
+        download={`${cv.title}.pdf`}
+      >
+        <FileCheckIcon className="w-4 h-4 mr-1" /> {cv.title}
+      </a>
+    ))
+  }
+</div>
+
+<style>
+  .cv-wrapper {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .download-button {
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition:
+      transform 0.2s ease,
+      background-color 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .download-button:hover {
+    background-color: #333;
+    transform: translateY(-2px);
+  }
+
+  .iframe-container {
+    width: 100%;
+    aspect-ratio: 1 / 1.4142; /* Proporción A4 */
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow:
+      0 20px 25px -5px rgb(0 0 0 / 0.1),
+      0 8px 10px -6px rgb(0 0 0 / 0.1);
+    border: 1px solid #e5e7eb;
+    background-color: #f9fafb;
+  }
+
+  iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
+  /* Optimización para móviles: ocultar iframe si es muy pequeño y dejar solo descarga */
+  @media (max-width: 480px) {
+    .iframe-container {
+      height: 400px; /* Reducir altura en móviles */
+    }
+  }
+</style>
