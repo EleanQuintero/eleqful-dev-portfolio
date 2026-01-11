@@ -1,5 +1,6 @@
 ---
 import { Button } from "@/components/ui/button";
+import MobileMenu from "@/components/MobileMenu";
 ---
 
 <header
@@ -31,6 +32,8 @@ import { Button } from "@/components/ui/button";
             </span></a
           >
         </div>
+
+        {/* Menú Desktop - oculto en móvil */}
         <div class="hidden md:flex items-center space-x-1">
           <Button
             variant="ghost"
@@ -57,6 +60,9 @@ import { Button } from "@/components/ui/button";
             <a href="/#contact"> Contacto </a>
           </Button>
         </div>
+
+        {/* Menú Hamburguesa para móvil */}
+        <MobileMenu client:load />
       </div>
     </div>
   </nav>

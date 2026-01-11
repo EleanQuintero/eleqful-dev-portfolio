@@ -10,7 +10,7 @@ import AnimatedContent from "@/components/AnimatedContent";
   id="hero"
   class="flex flex-col min-h-screen items-center justify-center bg-linear-to-br from-[#1E2952] via-[#1B4B7F] to-[#0F6E8F] overflow-hidden"
 >
-  <div class="flex flex-row justify-center items-center">
+  <div class="flex flex-col md:flex-row justify-center items-center">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="max-w-4xl mx-auto text-center space-y-8">
         <SplitText
@@ -37,7 +37,7 @@ import AnimatedContent from "@/components/AnimatedContent";
         />
 
         <div
-          class="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4"
+          class="flex flex-row md:flex-row sm:flex-row gap-4 justify-center items-center pt-4"
         >
           <AnimatedContent
             client:load
@@ -74,10 +74,10 @@ import AnimatedContent from "@/components/AnimatedContent";
       disappearEase="bounce.in"
       client:load
     >
-      <div>
+      <div class="md: flex flex-col items-center justify-center mt-5">
         <img
           src="https://res.cloudinary.com/dygwnv56x/image/upload/v1764515416/Eleqful_olxchs.webp"
-          alt=""
+          alt="Elean Quintero - Ingeniero de Software Full-Stack"
           class="h-4/6 w-4/6 rounded-xl aspect-auto"
         />
       </div>
