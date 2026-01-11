@@ -2,6 +2,7 @@
 import Footer from "@/sections/footer.astro";
 import Header from "@/sections/header.astro";
 import "@/styles/global.css";
+import Analytics from "@vercel/analytics/astro";
 
 interface Props {
   title?: string | undefined;
@@ -70,6 +71,7 @@ const ogImage = new URL(image, Astro.site);
     <Header />
     <slot />
     <Footer />
+    <Analytics />
   </body>
 </html>
 

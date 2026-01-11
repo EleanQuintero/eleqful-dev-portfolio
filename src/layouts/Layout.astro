@@ -1,5 +1,6 @@
 ---
 import "@/styles/global.css";
+import Analytics from "@vercel/analytics/astro";
 
 interface Props {
   title?: string;
@@ -9,8 +10,8 @@ interface Props {
 }
 
 const {
-  title = "Elean Quintero | Ingeniero de Software Full-Stack",
-  description = "Ingeniero de software especializado en desarrollo web full-stack. Creo productos digitales escalables con React, Next.js, Node.js y TypeScript. Portfolio de proyectos y servicios de desarrollo web.",
+  title = "Elean Quintero | Ingeniero Full-Stack & Desarrollador Web",
+  description = "Desarrollo soluciones web escalables con React, Next.js y Node.js. Portfolio de proyectos full-stack y servicios de desarrollo profesional.",
   image = "https://res.cloudinary.com/dygwnv56x/image/upload/v1764515416/Eleqful_olxchs.webp",
   type = "website",
 } = Astro.props;
@@ -69,6 +70,7 @@ const ogImage = new URL(image, Astro.site);
   </head>
   <body class="bg-background text-foreground">
     <slot />
+    <Analytics />
   </body>
 </html>
 
