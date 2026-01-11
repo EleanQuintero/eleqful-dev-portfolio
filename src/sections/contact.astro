@@ -1,4 +1,5 @@
 ---
+import AnimatedContent from "@/components/AnimatedContent";
 import ContactForm from "@/components/contactForm/ContactForm";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Mail, Linkedin, Github } from "lucide-react";
@@ -19,83 +20,117 @@ import { Mail, Linkedin, Github } from "lucide-react";
       </p>
     </div>
     <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-      <Card>
-        <CardHeader>
-          <CardTitle className="text-[#1E2952]"> Envíame un Mensaje </CardTitle>
-        </CardHeader>
-        <CardContent>
-          <ContactForm client:load />
-        </CardContent>
-      </Card>
-
-      <div class="space-y-6">
+      <AnimatedContent
+        client:load
+        distance={130}
+        delay={0.2}
+        duration={1.3}
+        ease="elastic.out(1, 0.3)"
+        scale={1.1}
+        disappearEase="elastic.in(1, 0.3)"
+      >
         <Card>
           <CardHeader>
             <CardTitle className="text-[#1E2952]">
-              Información de Contacto
+              Envíame un Mensaje
             </CardTitle>
           </CardHeader>
-          <CardContent className="space-y-4">
-            <div
-              class="flex items-center gap-3 text-muted-foreground hover:text-[#0F6E8F] transition-colors"
-            >
-              <Mail className="w-5 h-5 text-[#0F6E8F]" />
-              <a
-                href="mailto:contacto.eleanquintero@gmail.com"
-                class="hover:underline"
-              >
-                contacto.eleanquintero@gmail.com
-              </a>
-            </div>
-
-            <div
-              class="flex items-center gap-3 text-muted-foreground hover:text-[#0F6E8F] transition-colors"
-            >
-              <Linkedin className="w-5 h-5 text-[#0F6E8F]" />
-              <a
-                href="https://www.linkedin.com/in/eleanquintero/"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="hover:underline"
-              >
-                Linkedin | Elean Quintero
-              </a>
-            </div>
-
-            <div
-              class="flex items-center gap-3 text-muted-foreground hover:text-[#0F6E8F] transition-colors"
-            >
-              <Github className="w-5 h-5 text-[#0F6E8F]" />
-              <a
-                href="https://github.com/EleanQuintero"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="hover:underline"
-              >
-                GitHub | Elean Quintero
-              </a>
-            </div>
+          <CardContent>
+            <ContactForm client:load />
           </CardContent>
         </Card>
+      </AnimatedContent>
 
-        <Card
-          className="bg-linear-to-br from-[#1E2952] to-[#0F6E8F] text-white border-none"
+      <div class="space-y-6">
+        <AnimatedContent
+          direction="horizontal"
+          distance={190}
+          delay={0.3}
+          duration={1.2}
+          ease="bounce.out"
+          disappearEase="bounce.in"
+          client:load
+          className="mb-6 "
         >
-          <CardContent className="p-6">
-            <h3 class="text-xl font-semibold mb-2">¿Listo para empezar?</h3>
-            <p class="text-[#A8BDD0] mb-4">
-              Transformemos tus ideas en realidad. Estoy disponible para
-              proyectos freelance y colaboraciones.
-            </p>
-            <div class="flex gap-2">
-              <div class="w-2 h-2 rounded-full bg-green-400 animate-pulse">
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-[#1E2952]">
+                Información de Contacto
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <div
+                class="flex items-center gap-3 text-muted-foreground hover:text-[#0F6E8F] transition-colors"
+              >
+                <Mail className="w-5 h-5 text-[#0F6E8F]" />
+                <a
+                  href="mailto:contacto.eleanquintero@gmail.com"
+                  class="hover:underline"
+                >
+                  contacto.eleanquintero@gmail.com
+                </a>
               </div>
-              <span class="text-sm text-[#A8BDD0]">
-                Disponible para proyectos
-              </span>
-            </div>
-          </CardContent>
-        </Card>
+
+              <div
+                class="flex items-center gap-3 text-muted-foreground hover:text-[#0F6E8F] transition-colors"
+              >
+                <Linkedin className="w-5 h-5 text-[#0F6E8F]" />
+                <a
+                  href="https://www.linkedin.com/in/eleanquintero/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="hover:underline"
+                >
+                  Linkedin | Elean Quintero
+                </a>
+              </div>
+
+              <div
+                class="flex items-center gap-3 text-muted-foreground hover:text-[#0F6E8F] transition-colors"
+              >
+                <Github className="w-5 h-5 text-[#0F6E8F]" />
+                <a
+                  href="https://github.com/EleanQuintero"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="hover:underline"
+                >
+                  GitHub | Elean Quintero
+                </a>
+              </div>
+            </CardContent>
+          </Card>
+        </AnimatedContent>
+
+        <AnimatedContent
+          direction="horizontal"
+          distance={190}
+          delay={0.3}
+          duration={1.2}
+          ease="bounce.out"
+          disappearEase="bounce.in"
+          client:load
+          className="mb-6"
+        >
+          <Card
+            className="bg-linear-to-br from-[#1E2952] to-[#0F6E8F] text-white border-none"
+          >
+            <CardContent className="p-6">
+              <h3 class="text-xl font-semibold mb-2">¿Listo para empezar?</h3>
+              <p class="text-[#A8BDD0] mb-4">
+                Transformemos tus ideas en realidad. Estoy disponible para
+                proyectos freelance y colaboraciones.
+              </p>
+              <div class="flex gap-2">
+                <div class="w-2 h-2 rounded-full bg-green-400 animate-pulse">
+                </div>
+                <span class="text-sm text-[#A8BDD0]">
+                  Disponible para proyectos
+                </span>
+              </div>
+            </CardContent>
+          </Card>
+        </AnimatedContent>
       </div>
     </div>
   </div>

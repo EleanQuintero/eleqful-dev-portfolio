@@ -3,7 +3,11 @@ import { Code, Database, Globe, Palette } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
-import { getCollection, render } from "astro:content";
+import { getCollection } from "astro:content";
+import AnimatedContent from "@/components/AnimatedContent";
+import TextType from "@/components/TextType";
+import SplitText from "@/components/SplitText";
+import CvPreview from "@/components/cvPreview/CvPreview.astro";
 
 export const prerender = true;
 
@@ -13,7 +17,8 @@ const about = aboutCollection[0];
 const { data } = about;
 const { title, design, interests, skills, subtitle, tools } = data;
 
-const { Content } = await render(about);
+// Extraer el texto del body del markdown
+const aboutText = about.body || "";
 ---
 
 <section
@@ -21,121 +26,226 @@ const { Content } = await render(about);
   class="flex flex-col min-h-screen items-center justify-center bg-linear-to-br from-[#FFFF] via-[#d1d2d4] to-[#c5c9ca] overflow-hidden"
 >
   <div class="container mx-auto px-4 sm:px-6 lg:px-8 mt-10 mb-10">
-    <div class="text-center mb-16">
-      <h2 class="text-4xl sm:text-5xl font-bold text-[#1E2952] mb-4">
-        Sobre Mí
-      </h2>
-      <p class="text-xl text-muted-foreground max-w-2xl mx-auto">
+    <div class="flex flex-col text-center mb-16">
+      <SplitText
+        client:load
+        delay={80}
+        duration={0.9}
+        ease="elastic.out(1, 0.3)"
+        className="text-4xl sm:text-5xl font-bold text-[#1E2952] mb-4"
+        tag="h2"
+      >
+        ¿Quien soy?
+      </SplitText>
+      <SplitText
+        client:load
+        delay={90}
+        duration={1}
+        ease="bounce.out"
+        splitType="words"
+        className="text-xl sm:text-2xl "
+        tag="p"
+      >
         {title}
-      </p>
+      </SplitText>
     </div>
 
     <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-      <Card>
-        <CardContent className="flex items-center justify-center">
-          <img
-            src="https://res.cloudinary.com/dygwnv56x/image/upload/v1764546145/Eleqful2_uvm6ft.webp"
-            alt=""
-            class="w-96 h-96 object-cover rounded-xl aspect-auto"
-          />
-        </CardContent>
-      </Card>
-      <Card>
-        <CardContent className="flex items-center justify-center">
-          <img
-            src="https://res.cloudinary.com/dygwnv56x/image/upload/v1764464835/20251109_1454_Elegant_Tech_Logo_remix_01k9me9mn0e5ytht6zs1djty4h_ugaaqm.png"
-            alt=""
-            class="w-96 h-96 object-cover rounded-xl aspect-auto"
-          />
-        </CardContent>
-      </Card>
+      <AnimatedContent
+        reverse
+        direction="horizontal"
+        distance={110}
+        duration={0.5}
+        ease="elastic.out(1, 0.3)"
+        scale={1.1}
+        disappearEase="bounce.in"
+        client:load
+      >
+        <Card>
+          <CardContent className="flex items-center justify-center">
+            <img
+              src="https://res.cloudinary.com/dygwnv56x/image/upload/v1768147654/Eleqful2_uvm6ft.webp"
+              alt=""
+              class="w-96 h-96 object-cover rounded-xl aspect-auto"
+            />
+          </CardContent>
+        </Card>
+      </AnimatedContent>
+      <AnimatedContent
+        direction="horizontal"
+        distance={110}
+        duration={1.5}
+        ease="elastic.out(1, 0.3)"
+        scale={1.1}
+        disappearEase="bounce.in"
+        client:load
+      >
+        <Card>
+          <CardContent className="flex items-center justify-center">
+            <img
+              src="https://res.cloudinary.com/dygwnv56x/image/upload/v1764464835/20251109_1454_Elegant_Tech_Logo_remix_01k9me9mn0e5ytht6zs1djty4h_ugaaqm.png"
+              alt=""
+              class="w-96 h-96 object-cover rounded-xl aspect-auto"
+            />
+          </CardContent>
+        </Card>
+      </AnimatedContent>
 
-      <Card>
-        <CardHeader>
-          <CardTitle className="text-[#1E2952] flex items-center gap-2">
-            <Code className="w-5 h-5 text-[#0F6E8F]" />
-            <span class="text-2xl">{subtitle}</span>
-          </CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          <Content />
-          <Separator />
-          <div class="space-y-2">
-            <h4 class="font-semibold text-[#1E2952]">Intereses</h4>
-            <div class="flex flex-wrap gap-2">
-              {
-                interests.map((interest, index) => (
-                  <Badge key={index} variant="outline">
-                    {interest}
-                  </Badge>
-                ))
-              }
+      <AnimatedContent
+        reverse
+        direction="horizontal"
+        duration={1.3}
+        disappearEase="elastic.in(1, 0.3)"
+        client:load
+        className="mb-4"
+      >
+        <Card>
+          <CardHeader>
+            <CardTitle className="text-[#1E2952] flex items-center gap-2">
+              <Code className="w-5 h-5 text-[#0F6E8F]" />
+              <span class="text-2xl">{subtitle}</span>
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <TextType
+              loop={false}
+              client:load
+              reverseMode={false}
+              text={aboutText}
+              typingSpeed={13}
+              pauseDuration={1300}
+              deletingSpeed={40}
+              showCursor={true}
+              cursorCharacter="|"
+              className=" mx-auto mb-4"
+            />
+
+            <Separator />
+            <div class="space-y-2">
+              <h4 class="font-semibold text-[#1E2952]">Intereses</h4>
+              <div class="flex flex-wrap gap-2">
+                {
+                  interests.map((interest, index) => (
+                    <Badge key={index} variant="outline">
+                      {interest}
+                    </Badge>
+                  ))
+                }
+              </div>
             </div>
-          </div>
-        </CardContent>
-      </Card>
+          </CardContent>
+        </Card>
+      </AnimatedContent>
 
       <div class="space-y-6">
-        <Card>
-          <CardHeader>
-            <CardTitle className="text-[#1E2952] flex items-center gap-2">
-              <Globe className="w-5 h-5 text-[#0F6E8F]" />
-              <span class="text-2xl">Frontend</span>
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div class="flex flex-wrap gap-2">
-              {
-                skills.frontend.map((skill, index) => (
-                  <Badge key={index} variant="default">
-                    {skill}
-                  </Badge>
-                ))
-              }
-            </div>
-          </CardContent>
-        </Card>
-
-        <Card>
-          <CardHeader>
-            <CardTitle className="text-[#1E2952] flex items-center gap-2">
-              <Database className="w-5 h-5 text-[#0F6E8F]" />
-              <span class="text-2xl">Backend</span>
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div class="flex flex-wrap gap-2">
-              {
-                skills.backend.map((skill, index) => (
-                  <Badge key={index} variant="default">
-                    {skill}
-                  </Badge>
-                ))
-              }
-            </div>
-          </CardContent>
-        </Card>
-
-        <Card>
-          <CardHeader>
-            <CardTitle className="text-[#1E2952] flex items-center gap-2">
-              <Palette className="w-5 h-5 text-[#0F6E8F]" />
-              <span class="text-2xl">Herramientas y Diseño</span>
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div class="flex flex-wrap gap-2">
-              {
-                [...tools, ...design].map((skill, index) => (
-                  <Badge key={index} variant="default">
-                    {skill}
-                  </Badge>
-                ))
-              }
-            </div>
-          </CardContent>
-        </Card>
+        <AnimatedContent
+          direction="horizontal"
+          duration={1.3}
+          disappearEase="elastic.in(1, 0.3)"
+          client:load
+          className="mb-4"
+        >
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-[#1E2952] flex items-center gap-2">
+                <Globe className="w-5 h-5 text-[#0F6E8F]" />
+                <span class="text-2xl">Frontend</span>
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div class="flex flex-wrap gap-2">
+                {
+                  skills.frontend.map((skill, index) => (
+                    <Badge key={index} variant="default">
+                      {skill}
+                    </Badge>
+                  ))
+                }
+              </div>
+            </CardContent>
+          </Card>
+        </AnimatedContent>
+        <AnimatedContent
+          direction="horizontal"
+          duration={1.3}
+          disappearEase="elastic.in(1, 0.3)"
+          client:load
+          className="mb-4"
+        >
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-[#1E2952] flex items-center gap-2">
+                <Database className="w-5 h-5 text-[#0F6E8F]" />
+                <span class="text-2xl">Backend</span>
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div class="flex flex-wrap gap-2">
+                {
+                  skills.backend.map((skill, index) => (
+                    <Badge key={index} variant="default">
+                      {skill}
+                    </Badge>
+                  ))
+                }
+              </div>
+            </CardContent>
+          </Card>
+        </AnimatedContent>
+        <AnimatedContent
+          direction="horizontal"
+          duration={1.3}
+          disappearEase="elastic.in(1, 0.3)"
+          client:load
+        >
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-[#1E2952] flex items-center gap-2">
+                <Palette className="w-5 h-5 text-[#0F6E8F]" />
+                <span class="text-2xl">Herramientas y Diseño</span>
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div class="flex flex-wrap gap-2">
+                {
+                  [...tools, ...design].map((skill, index) => (
+                    <Badge key={index} variant="default">
+                      {skill}
+                    </Badge>
+                  ))
+                }
+              </div>
+            </CardContent>
+          </Card>
+        </AnimatedContent>
       </div>
+    </div>
+
+    <div class="flex flex-col justify-center items-center mt-10">
+      <SplitText
+        client:load
+        delay={80}
+        duration={0.9}
+        ease="elastic.out(1, 0.3)"
+        className="font-bold text-2xl sm:text-4xl text-[#1E2952] mb-4"
+        tag="h3"
+      >
+        Curriculums
+      </SplitText>
+
+      <SplitText
+        client:load
+        delay={90}
+        duration={1}
+        ease="bounce.out"
+        splitType="words"
+        className="text-xl sm:text-2xl mb-7 "
+        tag="p"
+      >
+        Aquí puedes acceder a mi curriculum en pdf redactado en distintos
+        formatos, para que puedas conocer mas sobre mi experiencia laboral
+      </SplitText>
+      <CvPreview />
     </div>
   </div>
 </section>
