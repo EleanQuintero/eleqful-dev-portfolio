@@ -1,4 +1,5 @@
 ---
+import { getCollection } from "astro:content";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -8,9 +9,24 @@ import {
   CardContent,
   CardFooter,
 } from "@/components/ui/card";
-import { ExternalLink, Github } from "lucide-react";
-import projects from "@/lib/data/projects.json";
+import { ExternalLink, Github, MonitorCheck } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+
+const allProjects = await getCollection("projects");
+
+const projects = {
+  projects: allProjects.map((project) => ({
+    title: project.data.title,
+    description: project.data.description,
+    image: project.data.imageURL,
+    technologies: project.data.technologies,
+    demoUrl: project.data.demoURL,
+    githubUrl: project.data.githubURL,
+    landingUrl: project.data.landingURL,
+  })),
+};
+
+console.log(projects.projects.map((p) => p.landingUrl));
 ---
 
 <section
@@ -73,6 +89,17 @@ import { Badge } from "@/components/ui/badge";
                 >
                   <ExternalLink className="w-4 h-4 mr-1" />
                   <span>Demo</span>
+                </a>
+              </Button>
+              <Button size="sm" variant="outline" className="flex-1">
+                <a
+                  target="_blank"
+                  href={project.landingUrl}
+                  class="flex items-center"
+                  rel="noopener noreferrer"
+                >
+                  <MonitorCheck className="w-4 h-4 mr-1" />
+                  <span>Web inicial</span>
                 </a>
               </Button>
               <Button size="sm" variant="outline" className="flex-1">

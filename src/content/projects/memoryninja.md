@@ -4,7 +4,8 @@ description: "Plataforma que genera tarjetas de estudio usando inteligencia arti
 imageURL: "https://res.cloudinary.com/dygwnv56x/image/upload/v1764516780/memoryninja_m2opxv.webp"
 technologies: [ "TypeScript","Next.js","Node.js","React","Express.js",
     "MySQL","Tailwind CSS","Gemini AI API"]
-demoURL: "https://memoryninja.es"
+landingURL: "https://memoryninja.es"
+demoURL: "https://memoryninja.es/demo"
 githubURL: "https://github.com/EleanQuintero/Memory-Ninja"
 projectImages: ["https://res.cloudinary.com/dygwnv56x/image/upload/v1764516780/memoryninja_m2opxv.webp", "https://res.cloudinary.com/dygwnv56x/image/upload/v1764516780/memoryninja_m2opxv.webp", "https://res.cloudinary.com/dygwnv56x/image/upload/v1764516780/memoryninja_m2opxv.webp", "https://res.cloudinary.com/dygwnv56x/image/upload/v1764516780/memoryninja_m2opxv.webp"]
 demoVideoURL: "https://www.youtube.com/embed/1PFCJDUbvUU?si=ci7snW22CswmFRmS&amp;controls=0" 

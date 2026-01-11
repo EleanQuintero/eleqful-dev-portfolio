@@ -14,26 +14,9 @@
         "Tailwind CSS",
         "Gemini AI API"
       ],
-      "demoUrl": "https://memoryninja.es",
+      "LandingPage": "https://memoryninja.es",
+      "demoUrl": "https://memoryninja.es/demo",
       "githubUrl": "https://github.com/EleanQuintero/Memory-Ninja"
-    },
-    {
-      "title": "Rehab For Strength Atlhetes",
-      "description": "Pagina web profesional para un cliente que ofrece servicios de rehabilitación a gran escala en atletas de alto rendimiento en deportes de fuerza.",
-      "image": "https://res.cloudinary.com/dygwnv56x/image/upload/v1764766898/rfsa_ak1rmw.webp",
-      "technologies": [
-        "TypeScript",
-        "Astro.js",
-        "Node.js",
-        "React",
-        "Tailwind CSS",
-        "GSAP Animations",
-        "Decap CMS",
-        "Cloudinary",
-        "Vercel"
-      ],
-      "demoUrl": "https://rfsa-web.vercel.app/",
-      "githubUrl": "https://github.com/EleanQuintero/RFSA-WEB"
     },
     {
       "title": "Nihongo Blog",
