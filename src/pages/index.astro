@@ -6,9 +6,50 @@ import Footer from "@/sections/footer.astro";
 import Projects from "@/sections/projects.astro";
 import About from "@/sections/about.astro";
 import Contact from "@/sections/contact.astro";
+
+// Structured Data JSON-LD
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Elean Quintero",
+  url: "https://eleqful.dev",
+  image:
+    "https://res.cloudinary.com/dygwnv56x/image/upload/v1764515416/Eleqful_olxchs.webp",
+  sameAs: [
+    "https://github.com/EleanQuintero",
+    "https://www.instagram.com/eleqful.dev",
+  ],
+  jobTitle: "Ingeniero de Software Full-Stack",
+  worksFor: {
+    "@type": "Organization",
+    name: "Freelance",
+  },
+  description:
+    "Ingeniero de software especializado en desarrollo web full-stack. Creo productos digitales escalables con React, Next.js, Node.js y TypeScript.",
+  knowsAbout: [
+    "JavaScript",
+    "TypeScript",
+    "React",
+    "Next.js",
+    "Node.js",
+    "Express.js",
+    "MySQL",
+    "Tailwind CSS",
+    "Desarrollo Web",
+    "Full-Stack Development",
+  ],
+  alumniOf: {
+    "@type": "EducationalOrganization",
+    name: "Desarrollo de Aplicaciones Web",
+  },
+};
 ---
 
 <Layout>
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify(structuredData)}
+  />
   <Header />
   <main>
     <Hero />
