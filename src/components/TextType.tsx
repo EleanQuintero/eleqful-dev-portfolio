@@ -9,7 +9,7 @@ import {
   useCallback,
   type ElementType,
 } from "react";
-import { gsap } from "gsap";
+import gsap from "gsap";
 
 import "./TextType.css";
 
