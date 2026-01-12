@@ -42,11 +42,11 @@ export default function MobileMenu() {
 
       {/* Menú Móvil */}
       <div
-        className={`fixed top-16 right-0 h-[calc(100vh-4rem)] w-64 bg-[#1E2952] border-l border-[#1B4B7F]/20 shadow-2xl transform transition-transform duration-300 ease-in-out z-50 md:hidden ${
+        className={`fixed top-16 right-0 h-[calc(100vh-4rem)] w-64 max-w-[80vw] bg-[#1E2952] border-l border-[#1B4B7F]/20 shadow-2xl transform transition-transform duration-300 ease-in-out z-50 md:hidden ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <nav className="flex flex-col p-6 space-y-4">
+        <nav className="flex flex-col p-4 sm:p-6 space-y-4 overflow-y-auto">
           <a
             href="/"
             className="text-white hover:text-[#48A3B5] py-3 px-4 rounded-lg hover:bg-[#1B4B7F] transition-colors duration-200"

@@ -16,8 +16,18 @@ import SplitText from "@/components/SplitText";
 
 const allProjects = await getCollection("projects");
 
+// Ordenar proyectos para que MemoryNinja aparezca primero
+const sortedProjects = allProjects.sort((a, b) => {
+  const aIsMemoryNinja = a.data.title.toLowerCase().includes("memory");
+  const bIsMemoryNinja = b.data.title.toLowerCase().includes("memory");
+
+  if (aIsMemoryNinja && !bIsMemoryNinja) return -1;
+  if (!aIsMemoryNinja && bIsMemoryNinja) return 1;
+  return 0;
+});
+
 const projects = {
-  projects: allProjects.map((project) => ({
+  projects: sortedProjects.map((project) => ({
     title: project.data.title,
     description: project.data.description,
     image: project.data.imageURL,

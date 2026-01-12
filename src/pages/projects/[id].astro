@@ -48,13 +48,17 @@ const structuredData = {
     type="application/ld+json"
     set:html={JSON.stringify(structuredData)}
   />
-  <main class="mx-auto px-4 py-16">
+  <main
+    class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 md:py-16"
+  >
     <section
-      class="flex flex-col justify-center items-center max-w-3xl mx-auto mb-12"
+      class="flex flex-col justify-center items-center max-w-3xl mx-auto mb-8 sm:mb-12 w-full"
     >
-      <h1 class="text-4xl font-bold mb-4 md:text-5xl">{title}</h1>
-      <p class="text-lg mb-6">{description}</p>
-      <div class="flex flex-wrap gap-2 mb-8">
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-center">
+        {title}
+      </h1>
+      <p class="text-base sm:text-lg mb-6 text-center px-2">{description}</p>
+      <div class="flex flex-wrap justify-center gap-2 mb-6 sm:mb-8 px-2">
         {
           technologies.map((tech, techIndex) => (
             <Badge key={techIndex} variant="secondary">
@@ -63,20 +67,22 @@ const structuredData = {
           ))
         }
       </div>
-      <div class="">
+      <div class="w-full">
         <img
           src={imageURL}
           alt={`Imagen principal del proyecto ${title}`}
-          class="rounded-2xl"
+          class="rounded-2xl w-full h-auto"
         />
       </div>
     </section>
-    <section class="flex flex-col gap-8 max-w-3xl mx-auto md:gap-12">
-      <div>
+    <section
+      class="flex flex-col gap-6 sm:gap-8 md:gap-12 max-w-3xl mx-auto w-full"
+    >
+      <div class="w-full">
         {
           demoVideoURL && (
-            <Card className="bg-surface-200 border-0 shadow-lg">
-              <CardContent>
+            <Card className="bg-surface-200 border-0 shadow-lg w-full overflow-hidden">
+              <CardContent className="p-0 sm:p-2 md:p-4">
                 <iframe
                   class="w-full aspect-video rounded-lg"
                   src="https://www.youtube.com/embed/1PFCJDUbvUU?si=ci7snW22CswmFRmS"
@@ -90,7 +96,7 @@ const structuredData = {
           )
         }
       </div>
-      <article class="prose prose-amber mx-auto p-3">
+      <article class="prose prose-amber max-w-none w-full px-2 sm:px-4 md:px-7">
         <Content components={{ a: Link }} />
       </article>
     </section>
