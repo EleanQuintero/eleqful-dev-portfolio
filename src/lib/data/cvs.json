@@ -1,16 +1,12 @@
 {
   "Curriculums": [
     {
-      "title": "Español-Europa",
-      "url": "https://res.cloudinary.com/dygwnv56x/image/upload/v1768149488/CV-ELEAN-QUINTERO-DESARROLLADOR_wb47ix.pdf"
+      "title": "Español",
+      "url": "https://res.cloudinary.com/dygwnv56x/image/upload/v1768314107/CV-ELEAN-QUINTERO-DESARROLLADOR_wb47ix.pdf"
     },
     {
       "title": "Inglés-Harvard",
       "url": "https://res.cloudinary.com/dygwnv56x/image/upload/v1768149507/Elean_Quintero_ENG_prcphc.pdf"
-    },
-    {
-      "title": "Español-Harvard",
-      "url": "https://res.cloudinary.com/dygwnv56x/image/upload/v1768149527/Elean_Quintero_ES_k8hcda.pdf"
     }
   ]
 }
