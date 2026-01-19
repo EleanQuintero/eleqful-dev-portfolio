@@ -16,7 +16,6 @@ import SplitText from "@/components/SplitText";
 
 const allProjects = await getCollection("projects");
 
-// Ordenar proyectos para que MemoryNinja aparezca primero
 const sortedProjects = allProjects.sort((a, b) => {
   const aIsMemoryNinja = a.data.title.toLowerCase().includes("memory");
   const bIsMemoryNinja = b.data.title.toLowerCase().includes("memory");
@@ -62,7 +61,7 @@ console.log(projects.projects.map((p) => p.landingUrl));
       {
         projects.projects.map((project, index) => (
           <FadeContent
-            client:load
+            client:visible
             delay={0.4}
             duration={1.4}
             initialOpacity={0.2}
@@ -76,6 +75,7 @@ console.log(projects.projects.map((p) => p.landingUrl));
                   href={`/projects/${project.title.toLowerCase().replace(/\s+/g, "-")}`}
                 >
                   <img
+                    fetchpriority="high"
                     src={project.image}
                     alt={project.title}
                     class="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
@@ -147,7 +147,7 @@ console.log(projects.projects.map((p) => p.landingUrl));
 
     <div class="flex flex-col justify-center items-center">
       <SplitText
-        client:load
+        client:visible
         duration={1}
         ease="bounce.out"
         splitType="words"
