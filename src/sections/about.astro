@@ -8,6 +8,7 @@ import AnimatedContent from "@/components/AnimatedContent";
 import TextType from "@/components/TextType";
 import SplitText from "@/components/SplitText";
 import CvPreview from "@/components/cvPreview/CvPreview.astro";
+import FadeContent from "@/components/FadeContent";
 
 export const prerender = true;
 
@@ -30,7 +31,7 @@ const aboutText = about.body || "";
       <SplitText
         client:visible
         delay={80}
-        duration={0.9}
+        duration={0.7}
         ease="elastic.out(1, 0.3)"
         className="text-4xl sm:text-5xl font-bold text-[#1E2952] mb-4"
         tag="h2"
@@ -40,7 +41,7 @@ const aboutText = about.body || "";
       <SplitText
         client:visible
         delay={90}
-        duration={1}
+        duration={0.7}
         ease="bounce.out"
         splitType="words"
         className="text-xl sm:text-2xl "
@@ -51,15 +52,12 @@ const aboutText = about.body || "";
     </div>
 
     <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-      <AnimatedContent
-        reverse
-        direction="horizontal"
-        distance={110}
-        duration={0.5}
-        ease="elastic.out(1, 0.3)"
-        scale={1.1}
-        disappearEase="bounce.in"
-        client:visible
+      <FadeContent
+        blur={true}
+        duration={1000}
+        ease="ease-out"
+        initialOpacity={0}
+        client:load
       >
         <Card>
           <CardContent className="flex items-center justify-center">
@@ -71,15 +69,13 @@ const aboutText = about.body || "";
             />
           </CardContent>
         </Card>
-      </AnimatedContent>
-      <AnimatedContent
-        direction="horizontal"
-        distance={110}
-        duration={1.5}
-        ease="elastic.out(1, 0.3)"
-        scale={1.1}
-        disappearEase="bounce.in"
-        client:visible
+      </FadeContent>
+      <FadeContent
+        blur={true}
+        duration={1000}
+        ease="ease-out"
+        initialOpacity={0}
+        client:load
       >
         <Card>
           <CardContent className="flex items-center justify-center">
@@ -91,7 +87,7 @@ const aboutText = about.body || "";
             />
           </CardContent>
         </Card>
-      </AnimatedContent>
+      </FadeContent>
 
       <AnimatedContent
         reverse
