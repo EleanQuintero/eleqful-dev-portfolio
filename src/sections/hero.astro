@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import SplitText from "@/components/SplitText";
 import TextType from "@/components/TextType";
 import AnimatedContent from "@/components/AnimatedContent";
+import FadeContent from "@/components/FadeContent";
 ---
 
 <section
@@ -33,11 +34,11 @@ import AnimatedContent from "@/components/AnimatedContent";
           deletingSpeed={40}
           showCursor={true}
           cursorCharacter="|"
-          className="text-xl sm:text-2xl text-[#A8BDD0]  mx-auto mt-8 mb-4"
+          className="text-xl sm:text-2xl text-[#A8BDD0]  mx-auto mt-8 mb-4 min-h-14 md:min-h-24 lg:min-h-14 "
         />
 
         <div
-          class="flex flex-row md:flex-row sm:flex-row gap-4 justify-center items-center pt-4"
+          class="flex flex-row md:flex-row sm:flex-row gap-4 justify-center items-center pt-2"
         >
           <AnimatedContent
             client:load
@@ -68,20 +69,20 @@ import AnimatedContent from "@/components/AnimatedContent";
         </div>
       </div>
     </div>
-    <AnimatedContent
-      direction="horizontal"
-      ease="bounce.out"
-      disappearEase="bounce.in"
+    <FadeContent
+      blur={true}
+      duration={1000}
+      ease="ease-out"
+      initialOpacity={0}
       client:load
+      className="flex flex-col items-center justify-center mt-5"
     >
-      <div class="md: flex flex-col items-center justify-center mt-5">
-        <img
-          fetchpriority="high"
-          src="https://res.cloudinary.com/dygwnv56x/image/upload/v1764515416/Eleqful_olxchs.webp"
-          alt="Elean Quintero - Ingeniero de Software Full-Stack"
-          class="h-4/6 w-4/6 rounded-xl aspect-auto"
-        />
-      </div>
-    </AnimatedContent>
+      <img
+        fetchpriority="high"
+        src="https://res.cloudinary.com/dygwnv56x/image/upload/v1764515416/Eleqful_olxchs.webp"
+        alt="Elean Quintero - Ingeniero de Software Full-Stack"
+        class="h-4/6 w-4/6 rounded-xl aspect-auto"
+      />
+    </FadeContent>
   </div>
 </section>
