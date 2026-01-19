@@ -14,7 +14,7 @@ Soy un desarrollador full stack apasionado por crear aplicaciones web modernas y
 
 Me especializo en el ecosistema JavaScript/TypeScript, con dominio profundo en React y Node.js. Lo que realmente me motiva son los proyectos desafiantes: esos que me empujan a dominar nuevas tecnologías mientras ayudo a empresas y emprendedores a alcanzar sus objetivos a través de soluciones de software bien ejecutadas.
 
-Más allá del código
+Más allá del código:
 
 Además de mi pasión por el desarrollo de software, tengo un profundo interés en las habilidades blandas, especialmente la comunicación efectiva. Creo firmemente que es una de las competencias más valiosas que podemos cultivar, ya que nuestro éxito depende de cómo transmitimos ideas, colaboramos y generamos impacto real.
 
