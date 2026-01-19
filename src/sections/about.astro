@@ -28,7 +28,7 @@ const aboutText = about.body || "";
   <div class="container mx-auto px-4 sm:px-6 lg:px-8 mt-10 mb-10">
     <div class="flex flex-col text-center mb-16">
       <SplitText
-        client:load
+        client:visible
         delay={80}
         duration={0.9}
         ease="elastic.out(1, 0.3)"
@@ -38,7 +38,7 @@ const aboutText = about.body || "";
         ¿Quien soy?
       </SplitText>
       <SplitText
-        client:load
+        client:visible
         delay={90}
         duration={1}
         ease="bounce.out"
@@ -59,11 +59,12 @@ const aboutText = about.body || "";
         ease="elastic.out(1, 0.3)"
         scale={1.1}
         disappearEase="bounce.in"
-        client:load
+        client:visible
       >
         <Card>
           <CardContent className="flex items-center justify-center">
             <img
+              fetchpriority="high"
               src="https://res.cloudinary.com/dygwnv56x/image/upload/v1768147654/Eleqful2_uvm6ft.webp"
               alt="Elean Quintero - Desarrollador Web"
               class="w-96 h-96 object-cover rounded-xl aspect-auto"
@@ -78,11 +79,12 @@ const aboutText = about.body || "";
         ease="elastic.out(1, 0.3)"
         scale={1.1}
         disappearEase="bounce.in"
-        client:load
+        client:visible
       >
         <Card>
           <CardContent className="flex items-center justify-center">
             <img
+              fetchpriority="high"
               src="https://res.cloudinary.com/dygwnv56x/image/upload/v1764464835/20251109_1454_Elegant_Tech_Logo_remix_01k9me9mn0e5ytht6zs1djty4h_ugaaqm.png"
               alt="Logo Eleqful - Desarrollo de Software"
               class="w-96 h-96 object-cover rounded-xl aspect-auto"
@@ -96,7 +98,7 @@ const aboutText = about.body || "";
         direction="horizontal"
         duration={1.3}
         disappearEase="elastic.in(1, 0.3)"
-        client:load
+        client:visible
         className="mb-4"
       >
         <Card>
@@ -107,19 +109,7 @@ const aboutText = about.body || "";
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
-            <TextType
-              loop={false}
-              client:load
-              reverseMode={false}
-              text={aboutText}
-              typingSpeed={13}
-              pauseDuration={1300}
-              deletingSpeed={40}
-              showCursor={true}
-              cursorCharacter="|"
-              className=" mx-auto mb-4"
-            />
-
+            <p class="mx-auto mb-4 whitespace-pre-line">{aboutText}</p>
             <Separator />
             <div class="space-y-2">
               <h4 class="font-semibold text-[#1E2952]">Intereses</h4>
@@ -142,7 +132,7 @@ const aboutText = about.body || "";
           direction="horizontal"
           duration={1.3}
           disappearEase="elastic.in(1, 0.3)"
-          client:load
+          client:visible
           className="mb-4"
         >
           <Card>
@@ -169,7 +159,7 @@ const aboutText = about.body || "";
           direction="horizontal"
           duration={1.3}
           disappearEase="elastic.in(1, 0.3)"
-          client:load
+          client:visible
           className="mb-4"
         >
           <Card>
@@ -196,7 +186,7 @@ const aboutText = about.body || "";
           direction="horizontal"
           duration={1.3}
           disappearEase="elastic.in(1, 0.3)"
-          client:load
+          client:visible
         >
           <Card>
             <CardHeader>
@@ -223,7 +213,7 @@ const aboutText = about.body || "";
 
     <div class="flex flex-col justify-center items-center mt-10">
       <SplitText
-        client:load
+        client:visible
         delay={80}
         duration={0.9}
         ease="elastic.out(1, 0.3)"
@@ -234,7 +224,7 @@ const aboutText = about.body || "";
       </SplitText>
 
       <SplitText
-        client:load
+        client:visible
         delay={90}
         duration={1}
         ease="bounce.out"
